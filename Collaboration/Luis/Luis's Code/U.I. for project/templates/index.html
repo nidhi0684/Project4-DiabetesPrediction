@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Diabetes Prediction</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      padding: 20px;
+    }
+    
+    .container {
+      max-width: 500px;  
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px; 
+      border-radius: 5px;
+    }
+    
+    h1 {
+      text-align: center; 
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    label#gender {
+      margin-bottom: 30px; 
+    }
+ 
+    input[type="text"], 
+    input[type="number"] {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;  
+      width: 100%;
+      margin-bottom: 20px; 
+    }
+    
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer; 
+      width: 100%;
+      font-size: 16px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>Diabetes Prediction</h1>
+    
+    <form>
+    
+      <label for="gender">Gender:</label>
+
+      <select id="gender">
+        <option value="">Select</option>
+        <option value="1">Male</option>   
+        <option value="0">Female</option>
+      </select>
+
+      <label for="age">Age:</label>
+
+      <input type="text" id="age" name="age" pattern="[0-9]*">
+      
+      <label for="hypertension">Hypertension:</label>
+
+      <select id="hypertension">
+        <option value="">Select</option>
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+      </select>
+
+      <label for="heart_disease">Heart Disease:</label>
+      
+      <select id="heart_disease">
+        <option value="">Select</option>
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+      </select>
+      
+      <label for="smoking_history">Smoking History:</label>    
+      
+      <select id="smoking_history">
+        <option value="">Select</option>
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+      </select>
+
+      <label for="bmi">BMI:</label>
+
+      <input type="text" id="bmi" name="bmi" pattern="[0-9]*">
+      
+      <label for="hba1c_level">HbA1c Level:</label>
+
+      <input type="text" id="hba1c_level" name="hba1c_level" pattern="[0-9]*">
+
+      <label for="blood_glucose_level">Blood Glucose Level:</label>
+
+      <input type="text" id="blood_glucose_level" name="blood_glucose_level" pattern="[0-9]*">
+      
+      <button type="button" onclick="predict()">Predict</button>
+      
+    </form>
+
+  </div>
+
+  <script>
+    function predict() {
+      // Get input values  
+      var gender = document.getElementById("gender").value;  
+      var age = parseInt(document.getElementById("age").value);
+      var hypertension = document.getElementById("hypertension").value;
+      var heart_disease = document.getElementById("heart_disease").value;  
+      var smoking_history = document.getElementById("smoking_history").value;
+      var bmi = parseInt(document.getElementById("bmi").value);
+      var hba1c_level = parseInt(document.getElementById("hba1c_level").value);
+      var blood_glucose_level = document.getElementById("blood_glucose_level").value;
+
+      // API URL
+      var apiUrl = window.location.origin + "/api/v1.0/predict/"+gender+"/"+age+"/"+hypertension+"/"+heart_disease+"/"+smoking_history+"/"+bmi+"/"+hba1c_level+"/"+blood_glucose_level;
+      
+
+      // Make API call  
+      fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+          // Display results  
+          console.log(data)
+          var probablilty = (data.probability.values[0] * 100).toFixed(2)
+          console.log(probablilty)
+          if (data.prediction === 1) {
+            alert("Based on the input parameters provided, you have " + probablilty + "% of being diabetic")
+          } else {
+            alert("Based on the input parameters provided, you have " + probablilty + "% of not being diabetic")
+          }
+        });
+    }
+  </script>
+
+</body>
+</html>
