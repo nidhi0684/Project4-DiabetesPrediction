@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Diabetes Prediction</title>
+  <title>Diabetes Prediction using ML Model</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -45,12 +45,12 @@
       width: 100%;
       font-size: 16px;
     }
-
   </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.8/dist/sweetalert2.all.min.js"></script>
 </head>
 
 <body>
-
   <div class="container">
 
     <h1>Diabetes Prediction</h1>
@@ -81,7 +81,7 @@
       <label for="blood_glucose_level">Blood Glucose Level:</label>    
       <input type="number" id="blood_glucose_level" name="blood_glucose_level">
       
-      <button type="button" onclick="predict()">Predict</button>
+      <button id="showAlert" type="button" onclick="predict()">Predict</button>
       
     </form>
 
@@ -112,13 +112,14 @@
           var probablilty = (data.probability.values[0] * 100).toFixed(2)
           console.log(probablilty)
           if (data.prediction === 1) {
-            alert("Based on the input parameters provided, you have " + probablilty + "% of being diabetic")
+            //alert("Based on the input parameters provided, subject has " + probablilty + "% probability of being diabetic")
+            Swal.fire("Based on the input parameters provided, subject has " + probablilty + "% probability of being diabetic",)
           } else {
-            alert("Based on the input parameters provided, you have " + probablilty + "% of not being diabetic")
+            //alert("Based on the input parameters provided, subject has " + probablilty + "% probability of not being diabetic")
+            Swal.fire("Based on the input parameters provided, subject has " + probablilty + "% probability of not being diabetic",)
           }
         });
     }
   </script>
-
 </body>
 </html>
