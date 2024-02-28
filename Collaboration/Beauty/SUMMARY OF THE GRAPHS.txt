@@ -1,0 +1,17 @@
+SUMMARY OF THE GRAPHS
+
+Histogram of Age:
+This displays the distribution of ages in the dataset. It shows how many individuals fall into different age bins.The vertical line shows the mean age in out dataset.
+
+Bar Chart of Hypertension and Heart Disease Counts:
+This illustrates the counts of individuals with hypertension and heart disease. 
+
+Pie Chart of Gender Distribution:
+The pie chart shows the distribution of genders within our dataset. It presents the proportion of males versus females. 
+
+Scatter Plot of BMI vs. Age:
+Thescatter plot displays the relationship between BMI (Body Mass Index) and age. It shows how BMI varies with age, indicating any potential patterns or correlations between these two variables.
+
+Boxplot of Blood Glucose Level by Diabetes Status:
+The boxplot visualizes the distribution of blood glucose levels among individuals grouped by their diabetes status. It shows a comparison of blood glucose levels between individuals with and without diabetes.
+
