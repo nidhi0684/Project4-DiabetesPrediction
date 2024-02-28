@@ -58,30 +58,57 @@
     <form>
     
       <label for="gender">Gender:</label>
-      <input type="text" id="gender" name="gender">
 
-      <label for="age">Age:</label>    
-      <input type="number" id="age" name="age">
+      <select id="gender">
+        <option value="">Select</option>
+        <option value="1">Male</option>   
+        <option value="0">Female</option>
+      </select>
+
+      <label for="age">Age:</label>
+
+      <input type="text" id="age" name="age" pattern="[0-9]*">
       
-      <label for="hypertension">Hypertension:</label>    
-      <input type="number" id="hypertension" name="hypertension">
+      <label for="hypertension">Hypertension:</label>
+
+      <select id="hypertension">
+        <option value="">Select</option>
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+      </select>
 
       <label for="heart_disease">Heart Disease:</label>
-      <input type="number" id="heart_disease" name="heart_disease">
+      
+      <select id="heart_disease">
+        <option value="">Select</option>
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+      </select>
       
       <label for="smoking_history">Smoking History:</label>    
-      <input type="number" id="smoking_history" name="smoking_history">
+      
+      <select id="smoking_history">
+        <option value="">Select</option>
+        <option value="0">never</option>
+        <option value="1">ever</option>
+        <option value="2">not current</option>
+        <option value="3">current</option>
+        <option value="4">former</option>
+      </select>
 
       <label for="bmi">BMI:</label>
-      <input type="number" step="0.01" id="bmi" name="bmi">
+
+      <input type="text" id="bmi" name="bmi" pattern="[0-9]*">
       
       <label for="hba1c_level">HbA1c Level:</label>
-      <input type="number" step="0.01" id="hba1c_level" name="hba1c_level">
 
-      <label for="blood_glucose_level">Blood Glucose Level:</label>    
-      <input type="number" id="blood_glucose_level" name="blood_glucose_level">
+      <input type="text" id="hba1c_level" name="hba1c_level" pattern="[0-9]*">
+
+      <label for="blood_glucose_level">Blood Glucose Level:</label>
+
+      <input type="text" id="blood_glucose_level" name="blood_glucose_level" pattern="[0-9]*">
       
-      <button id="showAlert" type="button" onclick="predict()">Predict</button>
+      <button type="button" onclick="predict()">Predict</button>
       
     </form>
 
