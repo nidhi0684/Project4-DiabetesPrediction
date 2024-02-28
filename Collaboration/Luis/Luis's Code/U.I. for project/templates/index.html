@@ -6,36 +6,65 @@
     body {
       font-family: Arial, sans-serif;
       background-color: #f9f9f9;
-      padding: 20px;
+      padding: 50px;
+    }
+
+    .header {
+      text-align: center;
+      padding-bottom: 20px;
+    }
+
+    .logo {
+      width: 100;
+      margin-bottom: 10px;
     }
     
     .container {
-      max-width: 500px;  
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 600px;  
       margin: 0 auto;
       background-color: #fff;
-      padding: 20px; 
+      padding: 10px; 
       border-radius: 5px;
     }
+  
     
     h1 {
       text-align: center; 
     }
+
+    form {
+      max-width: 500px;
+      width: 100%;  
+    }
     
     label {
+      text-align: center;
       display: block;
       margin-bottom: 10px;
+    }
+
+    input, 
+    select {
+      text-align: center;
+      margin: 0 auto;  
     }
 
     label#gender {
       margin-bottom: 30px; 
     }
  
-    input[type="text"], 
+    input[type="text"],
     input[type="number"] {
+      text-align: center;
       padding: 10px;
+      font-size: 15px
       border-radius: 5px;
-      border: 1px solid #ccc;  
-      width: 100%;
+      border: 1px solid #ccc;
+      width: 25%; 
       margin-bottom: 20px; 
     }
     
@@ -47,7 +76,7 @@
       border-radius: 5px;
       cursor: pointer; 
       width: 100%;
-      font-size: 16px;
+      font-size: 20px;
     }
 
   </style>
@@ -57,11 +86,13 @@
 
   <div class="container">
 
-    <h1>Diabetes Prediction</h1>
+    <h1>Your Diabetes Predictor</h1>
     
     <form>
     
       <label for="gender">Gender:</label>
+
+  <div></div>
 
       <select id="gender">
         <option value="">Select</option>
@@ -69,9 +100,15 @@
         <option value="0">Female</option>
       </select>
 
+  <div></div>
+
       <label for="age">Age:</label>
 
+  <div></div>
+
       <input type="text" id="age" name="age" pattern="[0-9]*">
+
+  <div></div>
       
       <label for="hypertension">Hypertension:</label>
 
@@ -81,6 +118,8 @@
         <option value="1">Yes</option>
       </select>
 
+  <div></div>
+
       <label for="heart_disease">Heart Disease:</label>
       
       <select id="heart_disease">
@@ -88,6 +127,8 @@
         <option value="0">No</option>
         <option value="1">Yes</option>
       </select>
+
+  <div></div>
       
       <label for="smoking_history">Smoking History:</label>    
       
@@ -100,17 +141,25 @@
         <option value="4">former</option>
       </select>
 
+  <div></div>
+
       <label for="bmi">BMI:</label>
 
       <input type="text" id="bmi" name="bmi" pattern="[0-9]*">
+
+  <div></div>
       
       <label for="hba1c_level">HbA1c Level:</label>
 
       <input type="text" id="hba1c_level" name="hba1c_level" pattern="[0-9]*">
 
+  <div></div>
+
       <label for="blood_glucose_level">Blood Glucose Level:</label>
 
       <input type="text" id="blood_glucose_level" name="blood_glucose_level" pattern="[0-9]*">
+
+  <div></div>
       
       <button type="button" onclick="predict()">Predict</button>
       
