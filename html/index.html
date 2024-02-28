@@ -28,10 +28,16 @@
     
     input[type="text"], 
     input[type="number"] {
-      padding: 10px;
+      padding: 5px;
       border-radius: 5px;
       border: 1px solid #ccc;  
-      width: 100%;
+      margin-bottom: 20px; 
+    }
+
+    select {
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;  
       margin-bottom: 20px; 
     }
     
@@ -65,10 +71,11 @@
         <option value="0">Female</option>
       </select>
 
+      <div></div>
       <label for="age">Age:</label>
 
       <input type="text" id="age" name="age" pattern="[0-9]*">
-      
+      <div></div>
       <label for="hypertension">Hypertension:</label>
 
       <select id="hypertension">
@@ -76,7 +83,7 @@
         <option value="0">No</option>
         <option value="1">Yes</option>
       </select>
-
+      <div></div>
       <label for="heart_disease">Heart Disease:</label>
       
       <select id="heart_disease">
@@ -84,7 +91,7 @@
         <option value="0">No</option>
         <option value="1">Yes</option>
       </select>
-      
+      <div></div>
       <label for="smoking_history">Smoking History:</label>    
       
       <select id="smoking_history">
@@ -95,19 +102,22 @@
         <option value="3">current</option>
         <option value="4">former</option>
       </select>
-
+      <div></div>
       <label for="bmi">BMI:</label>
 
       <input type="text" id="bmi" name="bmi" pattern="[0-9]*">
-      
+      <div></div>
+
       <label for="hba1c_level">HbA1c Level:</label>
 
       <input type="text" id="hba1c_level" name="hba1c_level" pattern="[0-9]*">
+      <div></div>
 
       <label for="blood_glucose_level">Blood Glucose Level:</label>
 
       <input type="text" id="blood_glucose_level" name="blood_glucose_level" pattern="[0-9]*">
-      
+      <div></div>
+
       <button type="button" onclick="predict()">Predict</button>
       
     </form>
