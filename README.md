@@ -90,7 +90,7 @@
     
     - Pie chart for gender distribution
 
-         ![Image](./Presentation/Images/PieChart.png)
+         ![Image](./Presentation/Images/Pie_Chart_1.png)
 
     - Bar chart to show hypertension and heart disease counts
 
